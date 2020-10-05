@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-3">
                     <div >
-                        <input type="text" [formControl]="from" class="form-control" id="fromInput" placeholder="">
+                        <input type="text" [formControl]="from" class="form-control" id="fromInput"  >
                         <label class="validation-message" *ngIf="submitted && from.invalid" [ngClass] = "'error'" >Information required</label>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-3">
                     <div >
-                        <input type="text" [formControl]="to" class="form-control" id="toInput"  placeholder="">
+                        <input type="text" [formControl]="to" class="form-control" id="toInput" >
                         <label class="validation-message" *ngIf="submitted && to.invalid" [ngClass] = "'error'" >Information required</label>                        
                     </div>
                 </div>

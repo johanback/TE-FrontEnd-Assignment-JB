@@ -3,7 +3,7 @@ import { RouteCalculationService } from './../../services/route-calculation.serv
 import { Component, Input, OnInit } from '@angular/core';
 import { UNIT_SIZE } from 'src/app/shared/unit-size.enum';
 
-import { RouteOption } from 'src/app/models/route-option';
+import { RouteOption } from 'src/app/models/route-option.model';
 
 
 @Component({

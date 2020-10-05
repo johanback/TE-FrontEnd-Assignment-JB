@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { RouteCalculation } from '../helpers/route-path-calculator';
-import { RouteOption } from '../models/route-option';
-import { RouteLocation } from '../shared/route-location.model';
-import { RouteData } from '../shared/route-data.model';
+import { RouteOption } from '../models/route-option.model';
+import { RouteLocation } from '../models/route-location.model';
+import { RouteData } from '../models/route-data.model';
 import { TERMS } from '../shared/terms.enum';
 import { UNIT_SIZE } from '../shared/unit-size.enum';
 import { RouteDataService } from './route-data.service';
-
 
 @Injectable()
 export class RouteCalculationService {
@@ -22,6 +21,7 @@ export class RouteCalculationService {
         this.cityDataSet = service.AllCities;
     }
 
+    //Returns all possible routes from source and destination with assigned unit and terms
     calcRoute(source: string, destination: string, unitSize: UNIT_SIZE, terms: TERMS) { 
 
         let cityList: Array<string> = new Array<string>();
@@ -45,6 +45,7 @@ export class RouteCalculationService {
          return this.getResultSet(routeCalculation.calculateAllRoutes(source, destination), unitSize, terms);
     }
 
+    //Creates a result set of RouteOptions from the array containing the routes, and fetches all necessary info
     getResultSet(routes: Array<Array<string>>, unitSize: UNIT_SIZE, terms: TERMS) { 
         var resultSet: Array<RouteOption> = [];
 
@@ -75,7 +76,6 @@ export class RouteCalculationService {
             //Add option to result set
             resultSet.push(routeOption);
         } 
-     
         return resultSet;
     }
 

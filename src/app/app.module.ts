@@ -25,6 +25,7 @@ import { JwtInterceptor } from './helpers/fakebackend/jwt.interceptor';
 import { fakeBackendProvider } from './helpers/fakebackend/fake-backend';
 import { SelectionMenuComponent } from './components/selection-menu/selection-menu.component';
 import { FreightSearchResultViewComponent } from './components/freight-search-result-view/freight-search-result-view.component';
+import { NgxTypeaheadModule } from 'ngx-typeahead';
 
 @NgModule({    
     imports: [
@@ -32,6 +33,7 @@ import { FreightSearchResultViewComponent } from './components/freight-search-re
         BrowserModule,
         FormsModule,
         HttpClientModule,
+        NgxTypeaheadModule,
         ReactiveFormsModule,
         routing
     ],

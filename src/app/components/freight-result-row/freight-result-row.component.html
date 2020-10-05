@@ -1,4 +1,5 @@
-﻿<div class="col-12 route-leg-info">
+﻿<!-- Component displaying info on one out the route legs of the transport -->
+<div class="col-12 route-leg-info">
     <p>{{legInfo.duration}} DAYS</p>
     <p>
         <span *ngIf="legInfo.transportMode == 'ROAD'; else elseBlock">ROAD TRANSPORT</span>

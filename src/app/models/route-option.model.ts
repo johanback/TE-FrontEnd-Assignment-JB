@@ -1,5 +1,5 @@
 import { TERMS } from '../shared/terms.enum';
-import { RouteData } from './../shared/route-data.model';
+import { RouteData } from './route-data.model';
 
 export class RouteOption {
     private optionId: number;

@@ -1,5 +1,5 @@
-import { TRANSPORT_MODE } from './transport-mode.enum';
-import { UNIT_SIZE } from './unit-size.enum';
+import { TRANSPORT_MODE } from '../shared/transport-mode.enum';
+import { UNIT_SIZE } from '../shared/unit-size.enum';
 import { RouteLocation } from './route-location.model';
 
 

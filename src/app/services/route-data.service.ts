@@ -1,8 +1,8 @@
 import { TRANSPORT_MODE } from './../shared/transport-mode.enum';
 import { UNIT_SIZE } from './../shared/unit-size.enum';
-import { RouteData } from './../shared/route-data.model';
+import { RouteData } from '../models/route-data.model';
 import { Injectable } from '@angular/core';
-import { RouteLocation } from '../shared/route-location.model';
+import { RouteLocation } from '../models/route-location.model';
 
 @Injectable()
 export class RouteDataService {
@@ -10,6 +10,7 @@ export class RouteDataService {
     private allCities: Array<RouteLocation> = [];
     private routeCollection: Array<RouteData> = [];
 
+    //Initialize the collection of route with provided sample data
     constructor() {
 
         this.allCities.push(new RouteLocation('Stockholm', 'STO', 'SE'));

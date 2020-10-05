@@ -1,0 +1,9 @@
+﻿<div class="row freight-search-result-container">
+    <div *ngIf="result.length > 0" class="results-header">
+        <span class="results-title">
+            <h3>YOUR RESULTS</h3>
+        </span>
+    </div>
+    <!-- SUBCOMPONENTS HERE -->
+    <freight-search-result *ngFor="let routeOption of result" [routeOption]="routeOption"></freight-search-result>
+</div>

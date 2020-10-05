@@ -1,0 +1,67 @@
+﻿<div class="row freight-search-container">
+    <div class="row freight-search">
+        <div class="col-8 input-container">
+            <!-- Top row of inputs -->
+            <!-- From Input -->
+            <div class="row to-from-row">
+                <div class="col-1 input-label">
+                    <label for="fromInput">From</label>
+                </div>
+                <div class="col-3">
+                    <div >
+                        <input type="text" [formControl]="from" class="form-control" id="fromInput" placeholder="">
+                        <label class="validation-message" *ngIf="submitted && from.invalid" [ngClass] = "'error'" >Information required</label>
+                    </div>
+                </div>
+                <!-- To Input -->
+                <div class="col-1 input-label">
+                    <label for="toInput">To</label>
+                </div>
+                <div class="col-3">
+                    <div >
+                        <input type="text" [formControl]="to" class="form-control" id="toInput"  placeholder="">
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom row of inputs -->
+            <!-- Unit Input -->
+            <div class="row unit-terms-row">
+                <div class="col-1 input-label">
+                    <label for="unitInput">Unit</label>
+                </div>
+                <div class="col-3">
+                    <div >
+                        <select class="form-control" [formControl]="unitSize" id="unitInput" >
+                            <option>40" Container</option>
+                            <option>60" Container</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Terms Input -->
+                <div class="col-1 input-label">
+                    <label for="termsInput">Terms</label>
+                </div>
+                <div class="col-3">
+                    <div >
+                        <select class="form-control" [formControl]="terms" id="termsInput" >
+                            <option>FOB</option>
+                            <option>CIF</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Search Button -->
+        <div class="col-4">
+            <div class="search-button-container-outer">
+                <div class="search-button-container-inner">
+                    <button type="button" class="btn btn-primary btn-lg searchbutton" (click)="submitSearch($event)">SEARCH</button>
+                </div>
+            </div>
+        </div> 
+    </div> 
+</div>
+<div class="col-12">
+    <freight-search-result-view [result]="result"></freight-search-result-view>
+</div>

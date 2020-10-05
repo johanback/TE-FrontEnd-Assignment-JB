@@ -1,0 +1,10 @@
+﻿<div class="col-12 route-leg-info">
+    <p>{{legInfo.duration}} DAYS</p>
+    <p>
+        <span *ngIf="legInfo.transportMode == 'ROAD'; else elseBlock">ROAD TRANSPORT</span>
+        <span *ngIf="legInfo.transportMode == 'OCEAN'; else elseBlock">OCEAN FREIGHT LOW STEAMING</span> 
+        {{legInfo.fromLocation.code}}-{{legInfo.toLocation.code}}  {{legInfo.unitSize | uppercase}} EVERY WEEKDAY DEPARTURE
+    </p>
+    <p>NEUTRALIZED 0 CO2 EMISSIONS</p>
+    <p class="leg-price">€{{legInfo.cost}}</p>
+</div>

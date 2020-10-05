@@ -1,0 +1,19 @@
+﻿    <!-- Option header -->
+    <div class="col-12 option-header">
+        <div>
+            <h4>OPTION {{routeOption.optionId}} {{routeOption.terms}}</h4>
+        </div>
+        <div class="header-summary" >
+            <span *ngFor="let city of routeOption.route; last as isLast">{{city}}<span *ngIf="!isLast">-</span></span>
+            FROM {{routeOption.totalCost}} EUR AND {{routeOption.totalDays}} DAYS
+        </div>
+    </div> 
+    
+    <!-- Option info -->
+    <div class="route-leg-info-container">
+        <freight-result-row *ngFor="let leg of routeOption.transportLegs" [legInfo]="leg"></freight-result-row>
+        <div class="col-12 book-button-container">
+            <button type="button" class="btn btn-primary btn-lg book-button">TOTAL {{routeOption.totalCost}}€ BOOK</button>
+        </div>
+    </div>
+

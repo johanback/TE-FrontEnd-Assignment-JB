@@ -11,7 +11,7 @@
     
     <!-- Option info -->
     <div class="route-leg-info-container">
-        <freight-result-row *ngFor="let leg of routeOption.transportLegs" [legInfo]="leg"></freight-result-row>
+        <freight-result-row *ngFor="let leg of routeOption.transportLegs" [legInfo]="leg" ></freight-result-row>
         <div class="col-12 book-button-container">
             <button type="button" class="btn btn-primary btn-lg book-button">TOTAL {{routeOption.totalCost}}€ BOOK</button>
         </div>

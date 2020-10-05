@@ -8,6 +8,7 @@ import { RouteOption } from 'src/app/models/route-option.model';
 
 
 
+
 @Component({
     selector: 'freight-search',
     templateUrl: './freight-search.component.html',

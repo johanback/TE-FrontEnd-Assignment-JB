@@ -14,13 +14,11 @@ import { Route } from '@angular/router';
 })
 export class FreightSearchResultViewComponent implements OnInit{
 
-    routeCalculationService: RouteCalculationService;
 
     @Input() result: Array<RouteOption>;
     @Input() isValidResult: boolean;
 
-    constructor(routeCalculationService: RouteCalculationService) {
-        this.routeCalculationService = routeCalculationService;
+    constructor() {
     }
 
     ngOnInit() {

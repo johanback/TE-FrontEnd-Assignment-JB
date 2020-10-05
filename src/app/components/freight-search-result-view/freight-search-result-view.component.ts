@@ -4,6 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { UNIT_SIZE } from 'src/app/shared/unit-size.enum';
 
 import { RouteOption } from 'src/app/models/route-option';
+import { Route } from '@angular/router';
 
 
 @Component({
@@ -15,14 +16,16 @@ export class FreightSearchResultViewComponent implements OnInit{
 
     routeCalculationService: RouteCalculationService;
 
-    @Input() result: Array<RouteOption> = [];
-
+    @Input() result: Array<RouteOption>;
+    @Input() isValidResult: boolean;
 
     constructor(routeCalculationService: RouteCalculationService) {
         this.routeCalculationService = routeCalculationService;
     }
 
-    ngOnInit(){
+    ngOnInit() {
+        this.result = [];
+        this.isValidResult = true;
     }
 
 }

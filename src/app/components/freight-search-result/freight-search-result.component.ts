@@ -13,21 +13,13 @@ import { RouteOption } from 'src/app/models/route-option';
 })
 export class FreightSearchResultComponent implements OnInit{
 
-
-
     constructor(routeCalculationService: RouteCalculationService) {
-
     }
 
     @Input() routeOption: any;
 
 
-    ngOnInit(){
-       
-    }
-
-    parseResult() {
-        
+    ngOnInit(){  
     }
 
 }

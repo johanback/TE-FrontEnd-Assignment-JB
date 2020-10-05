@@ -21,14 +21,13 @@ export class FreightSearchComponent implements OnInit{
 
     submitted = false;
 
-    
-
     from = new FormControl('', Validators.required); 
     to = new FormControl('', Validators.required); 
     unitSize = new FormControl('', Validators.required); 
     terms = new FormControl('', Validators.required);
     
-    result: Array<RouteOption> = [];
+    result: Array<RouteOption>;
+    isValidResult: boolean;
 
 
     constructor(dataService: RouteDataService, routeCalculationService : RouteCalculationService) { 
@@ -46,12 +45,17 @@ export class FreightSearchComponent implements OnInit{
         this.submitted = true;
 
         // stop here if form is invalid
-        if (this.from.invalid) {
+        if (this.from.invalid || this.to.invalid || this.unitSize.invalid || this.terms.invalid ) {
             return;
         }
 
-        console.log(this.from.value, this.to.value, this.unitSize.value, this.terms.value);
         this.result = this.routeCalculationService.calcRoute(this.from.value, this.to.value, this.unitSize.value, this.terms.value);  
+        
+        if (this.result.length == 0)
+            this.isValidResult = false;
+        else
+            this.isValidResult = true;
+    
     }
 
 }

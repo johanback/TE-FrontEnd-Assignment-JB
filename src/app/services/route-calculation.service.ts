@@ -14,6 +14,7 @@ export class RouteCalculationService {
     routeDataService: RouteDataService;
     routeDataSet: Array<RouteData> = [];
     cityDataSet: Array<RouteLocation> = [];
+    
 
     constructor(service: RouteDataService) { 
         this.routeDataService = service;
@@ -22,6 +23,13 @@ export class RouteCalculationService {
     }
 
     calcRoute(source: string, destination: string, unitSize: UNIT_SIZE, terms: TERMS) { 
+
+        let cityList: Array<string> = new Array<string>();
+        this.cityDataSet.forEach(element => cityList.push(element.Name));
+        
+        if (!cityList.includes(source) || !cityList.includes(destination)) { 
+            return [];
+        }
 
         // Add all possible routes 
         var routeCalculation: RouteCalculation = new RouteCalculation(this.cityDataSet.length);
@@ -67,7 +75,7 @@ export class RouteCalculationService {
             //Add option to result set
             resultSet.push(routeOption);
         } 
-        
+     
         return resultSet;
     }
 

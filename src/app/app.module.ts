@@ -1,3 +1,4 @@
+import { FreightHomeComponent } from './components/freight-home/freight-home.component';
 import { RouteCalculationService } from './services/route-calculation.service';
 import { FreightResultRowComponent } from './components/freight-result-row/freight-result-row.component';
 import { RouteDataService } from './services/route-data.service';
@@ -44,7 +45,8 @@ import { FreightSearchResultViewComponent } from './components/freight-search-re
         FreightSearchComponent,
         FreightSearchResultComponent,
         FreightResultRowComponent,
-        FreightSearchResultViewComponent
+        FreightSearchResultViewComponent,
+        FreightHomeComponent
     ],
     providers: [
         AuthGuard,
